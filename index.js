@@ -14,7 +14,7 @@ const loadData=()=>{
     const cardContainer=document.getElementById('card-container')
     for(const mobiles of mobile)
     {
-        console.log(mobiles)
+       console.log(mobiles)
         const div= document.createElement('div')
         div.innerHTML=`
         <div class="card mb-3" style="width: 15rem;">
@@ -24,7 +24,7 @@ const loadData=()=>{
           }"</h5>
           <p class="card-text">"${mobiles.slug
           }"</p>
-          <a href="#" class="btn btn-primary">Details</a>
+          <button type="button" onclick="loadDataDetails('${mobiles.slug}')" class="btn">Details</button>
         </div>
       </div>
         `
@@ -32,4 +32,14 @@ const loadData=()=>{
     }
    
  }
+
+const loadDataDetails=data=>
+{
+    const url=`https://openapi.programming-hero.com/api/phone/${data}`
+fetch(url)
+.then(res=>res.json())
+.then(data=>console.log(data))
+    
+}
+
 
