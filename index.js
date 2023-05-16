@@ -12,6 +12,7 @@ const loadData=()=>{
  const displayData= mobile=>
  {
     const cardContainer=document.getElementById('card-container')
+    cardContainer.textContent=''
     for(const mobiles of mobile)
     {
        console.log(mobiles)
@@ -48,6 +49,7 @@ fetch(url)
   console.log(detail)
 
   const cardDetails=document.getElementById('card-details')
+  cardDetails.textContent=''
   const div= document.createElement('div')
   div.innerHTML=`
   <div class="card mb-3" style="max-width: 540px;">
@@ -69,5 +71,6 @@ fetch(url)
 </div>
   `
   cardDetails.appendChild(div)
+ 
  }
 
